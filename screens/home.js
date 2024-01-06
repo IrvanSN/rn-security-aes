@@ -27,7 +27,8 @@ const Home = ({route}) => {
     const onRefreshUserDataList = async (data) => {
       console.log('on refresh user data list (home)', data)
       const matchedUser = data.filter(item => item.id === userData.id)
-      if (matchedUser) {
+      if (matchedUser.length !== 0) {
+        console.log('matchedUser', matchedUser)
         setLocation(matchedUser[0].currentPosition)
       }
       setUsersPosition(data)
